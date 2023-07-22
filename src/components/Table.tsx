@@ -8,6 +8,7 @@ type TTable = {
   sortById: () => void
   sortingByTitle: () => void
   sortingByBody: () => void
+  defaultSortId: () => void
 }
 
 const Table: FC<TTable> = ({
@@ -15,6 +16,7 @@ const Table: FC<TTable> = ({
   sortById,
   sortingByBody,
   sortingByTitle,
+  defaultSortId,
 }) => {
   const isFetching = useSelector(
     (state: TAppState) => state.postReducer.isFetching
@@ -25,7 +27,11 @@ const Table: FC<TTable> = ({
   return (
     <div className="table">
       <div className="table-top">
-        <div className="table-top_id" onClick={sortById}>
+        <div
+          className="table-top_id"
+          onClick={sortById}
+          onDoubleClick={defaultSortId}
+        >
           <span>ID</span>
           <img src="img/arrow-icon.svg" alt="arrow" />
         </div>

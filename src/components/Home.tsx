@@ -173,6 +173,12 @@ const Home: FC = () => {
     }
   }
 
+  // Восстановление сорта по ID
+
+  const defaultSortId = () => {
+    setFilteredPost(posts)
+  }
+
   // Поисковик
 
   const handleInput = (value: string) => {
@@ -203,6 +209,7 @@ const Home: FC = () => {
       <Search searchValue={searchValue} setSearchValue={handleInput} />
       <Table
         posts={postSliced}
+        defaultSortId={defaultSortId}
         sortById={sortById}
         sortingByBody={sortingByBody}
         sortingByTitle={sortingByTitle}

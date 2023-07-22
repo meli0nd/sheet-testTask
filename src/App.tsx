@@ -4,9 +4,11 @@ import Home from "./components/Home"
 const App = () => {
   return (
     <div>
+      <div></div>
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <div></div>
     </div>
   )
 }
